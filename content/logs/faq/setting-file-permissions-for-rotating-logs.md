@@ -55,11 +55,12 @@ sudo touch /etc/logrotate.d/dd-agent_ACLs
 Example file:
 
 ```
+/var/log/apache/*log
 {
  postrotate
- /usr/bin/setfacl -m g:dd-agent:rx /var/log/apache
- /usr/bin/setfacl -m g:dd-agent:rx /var/log/nginx
- /usr/bin/setfacl -m g:dd-agent:rx /var/log/myapp
+   /usr/bin/setfacl -m g:dd-agent:rx /var/log/apache
+   /usr/bin/setfacl -m g:dd-agent:rx /var/log/nginx
+   /usr/bin/setfacl -m g:dd-agent:rx /var/log/myapp
  endscript
 }
 ```
